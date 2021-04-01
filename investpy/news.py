@@ -258,7 +258,7 @@ def economic_calendar(time_zone=None, time_filter='time_only', countries=None, i
                     'actual': None if actual == '' else actual,
                     'forecast': None if forecast == '' else forecast,
                     'previous': None if previous == '' else previous,
-		    'news_timestamp': datetime.strptime(curr_date + ' ' + time, '%d/%m/%Y %H:%M').timestamp() if time != 'All Day' else 0
+		    'news_timestamp': datetime.strptime(curr_date + ' ' + time, '%d/%m/%Y %H:%M').timestamp() if ':' in time != 'All Day' else 0
                 })
         
         last_id = results[-1]['id']
